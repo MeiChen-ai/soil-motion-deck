@@ -43,7 +43,7 @@ Get-ChildItem "$HOME\.claude\skills","$HOME\.agents\skills" -Directory -ErrorAct
 
 其他需求：
 
-- 上游兩個技能的需求：Node.js 22+、ffmpeg、Python 3、HyperFrames，以及一個 TTS（edge-tts 或 Breeze）。
+- 上游兩個技能的需求：Node.js 22+、ffmpeg、Python 3、HyperFrames，以及一個 TTS：**edge-tts（預設）**，不需要 GPU，大多數人用這個；或 Breeze TTS 2（進階，需要 NVIDIA GPU，只限研究與非商業用途，使用者要求時才照 `motion-explainer/references/tts-setup.md` 引導安裝）。
 - 簡報：PptxGenJS 3.12.0（用本技能的 `templates/package.json` 安裝，見 §5），源石黑體 H／B／M（照 SOIL 的 F-0 安裝）。
 - 縮圖：Windows 有 PowerPoint 最好（`thumbs.py` 會直接用 PowerPoint 輸出，字型和影片封面跟上課時一模一樣）。沒有的話用 LibreOffice + poppler，只能檢查版面，不一定看得到影片封面。
 - 測試過的版本：HyperFrames 0.8.168、PptxGenJS 3.12.0。
