@@ -14,6 +14,7 @@ import re
 import shutil
 import sys
 from pathlib import Path
+sys.stdout.reconfigure(errors="replace")  # never crash printing Chinese or accented names on a non-UTF-8 console
 
 SKIP = ("renders", "review", "deck", "node_modules", "voice", ".git", "capture")
 
@@ -27,7 +28,11 @@ def main():
     dst = Path(a.out).resolve() if a.out else src.with_name(src.name + "-silent")
     if not (src / "index.html").exists():
         sys.exit(f"no index.html in {src}")
+    if dst == src or src in dst.parents or dst in src.parents:
+        sys.exit(f"--out must be a separate folder next to the project, not {dst}")
     if dst.exists():
+        if not (dst / "index.html").exists():
+            sys.exit(f"{dst} exists and is not a previous twin (no index.html); remove it yourself")
         shutil.rmtree(dst)
     shutil.copytree(src, dst, ignore=shutil.ignore_patterns(*SKIP))
 

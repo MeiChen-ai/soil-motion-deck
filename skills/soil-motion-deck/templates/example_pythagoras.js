@@ -1,7 +1,8 @@
 // 範例：SOIL Teaching Deck × motion-explainer — 國中數學〈畢氏定理〉（13 頁）
-// 第 3、6、9 頁嵌入動畫（media/p03|p06|p09.mp4，封面＝最後畫面 PNG）。複製到 <專案>/deck/ 後：
-//   npm i pptxgenjs@3.12.0 && node build_deck.js
-const fs = require("fs");
+// 第 3、6、9 頁嵌入動畫（media/p03|p06|p09.mp4，封面＝最後畫面 PNG）。用法（見 SKILL.md §5）：
+//   cp <本技能>/templates/{package.json,deck_helpers.js} <影片專案>/deck/
+//   cp <本技能>/templates/example_pythagoras.js <影片專案>/deck/build_deck.js   # 再改成你的內容
+//   cd <影片專案>/deck && npm install && node build_deck.js
 const path = require("path");
 const pptxgen = require("pptxgenjs");
 const { makeDeck } = require("./deck_helpers");
@@ -57,7 +58,7 @@ function triangle(s, x, y, ww, hh, labels) {
   s.addText("先猜一猜，再告訴旁邊的同學你的理由。", { x: 0.6, y: 3.4, w: 6.8, h: 0.6, fontFace: M, fontSize: 22, color: C.sub });
   s.addNotes("【引起動機】先讓學生猜，不急著算。答案（4 m）留到第 8 頁回扣。");
 }
-// 3 ★ 3-4-5 方格（動畫）
+// 3 🎬 3-4-5 方格（動畫）
 {
   const s = lightSlide("問題引入・動畫");
   title(s, "數數看：三邊上的正方形");
@@ -98,7 +99,7 @@ function triangle(s, x, y, ww, hh, labels) {
   card(s, 7.6, 5.2, 5.1, 1.4, "找斜邊的方法", "先找直角，再看它對面那條邊", C.ink);
   s.addNotes("請學生用手指出課本圖形中的斜邊，強調「直角對面」而不是「最後一個字母」。");
 }
-// 6 ★ 拼圖證明（動畫）
+// 6 🎬 拼圖證明（動畫）
 {
   const s = lightSlide("流程・動畫");
   title(s, "為什麼一定成立？面積拼圖");
@@ -126,7 +127,7 @@ function triangle(s, x, y, ww, hh, labels) {
   card(s, 8.4, 2.4, 4.4, 3.4, "求股的口訣", "斜邊的平方\n減另一股的平方\n再開根號", C.hyp);
   s.addNotes("回扣第 2 頁的猜測，請猜對的同學說說理由。");
 }
-// 9 ★ 三個誤解（動畫）
+// 9 🎬 三個誤解（動畫）
 {
   const s = lightSlide("迷思澄清・動畫");
   title(s, "三個常見錯誤");
