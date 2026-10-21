@@ -1,9 +1,14 @@
 ---
 name: soil-motion-deck
-description: 動畫教學簡報：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的解說動畫；B 是同一份內容的配音字幕解說影片（MP4）。使用者說「做有動畫的教學簡報」、「簡報的關鍵頁加動畫」、「SOIL 簡報加解說動畫」、「把這個單元做成簡報和動畫影片」、「投影片裡放動畫講解」，或手上已有 SOIL 簡報想把某幾頁換成動畫時，就要使用此技能。
+description: >
+  動畫教學簡報（PPTX＋HyperFrames 版）：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（HyperFrames 解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的靜音解說動畫片段；B 是同一份內容的配音字幕解說影片（MP4）。
+  使用者說「做有動畫的 PPTX 教學簡報」、「PPTX 簡報的關鍵頁加動畫」、「SOIL 簡報加 HyperFrames 解說動畫」、「用 soil-motion-deck 做簡報和影片」，或英文請求如 "build an animated PPTX teaching deck with HyperFrames", "use soil-motion-deck to create PPTX slides with embedded video clips and an MP4 explainer" 時，請使用此技能。（若使用者是要在 HTML 互動投影片加入英文旁白動畫頁，請改用 `soil-motion-html` 技能。）
 ---
 
-# SOIL 動畫教學簡報：一次製作，兩份成品
+# SOIL 動畫教學簡報（PPTX＋HyperFrames 版）：一次製作，兩份成品
+
+> 🌐 **Language Rule（雙語互動原則）**：
+> - 若使用者以**中文**提問，請以**繁體中文**互動；若使用者以**英文（English）**提問，請全程以**英文**互動並依使用者指定的語言撰寫簡報與旁白。
 
 | 成品 | 內容 | 給誰用 |
 |---|---|---|

@@ -1,0 +1,26 @@
+
+/* 🎬 Motion slides: shared player (soil-motion-html). Uses the SOIL deck tokens --accent, --accent-2,
+   --accent-light, --border-color, --primary, --text-muted; --green-light falls back to --accent-light. */
+.mx-fold{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .45s ease;}
+.mx-fold.show{max-height:340px;opacity:1;}
+.mx-fade{opacity:0;transform:translateY(6px);transition:opacity .45s,transform .45s;}
+.mx-fade.show{opacity:1;transform:none;}
+.mx-instant,.mx-instant *{transition:none !important;animation:none !important;}
+.mx-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:12px;}
+.mx-btn{border:none;background:var(--accent-2);color:#fff;font-weight:800;font-size:1rem;padding:8px 18px;border-radius:999px;cursor:pointer;min-height:40px;white-space:nowrap;}
+.mx-btn.mx-play{min-width:8.6em;}
+.mx-btn.ghost{background:#fff;color:var(--primary);border:2px solid var(--border-color);}
+.mx-chips{display:inline-flex;flex-wrap:wrap;gap:6px;}
+.mx-chip{border:2px solid var(--border-color);background:#fff;border-radius:999px;padding:4px 12px;font-weight:700;font-size:.9rem;cursor:pointer;color:var(--text-muted);min-height:36px;white-space:nowrap;}
+.mx-chip.on{border-color:var(--accent-2);color:var(--accent-2);background:var(--green-light, var(--accent-light));}
+.mx-bar{flex:1;height:6px;border-radius:3px;background:var(--border-color);overflow:hidden;min-width:40px;}
+.mx-bar div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+.mx-time{font-size:.9rem;font-weight:700;color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.mx-stamp{display:inline-block;font-weight:800;font-size:.92rem;border-radius:999px;padding:2px 12px;}
+.mx-stamp:empty{display:none;}
+.mx-stamp.no{background:#F4DADA;color:#8B3A3A;}
+.mx-stamp.ok{background:var(--green-light, var(--accent-light));color:#8A2F5A;}
+.mx-caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-3px;margin-left:1px;animation:mxBlink 1s steps(1) infinite;}
+@keyframes mxBlink{50%{opacity:0;}}
+.press{transform:scale(.93);}
+
