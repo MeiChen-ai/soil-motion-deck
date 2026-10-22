@@ -13,7 +13,7 @@
 
 ### 一、 這套 Skill 是什麼？解決什麼問題？
 
-在製作語言學習與微學習（Microlearning）投影片時，有些概念光靠「靜態投影片」很難讓學習者一眼看懂（例如：**前後對照改錯、迷思翻轉 ❌➔✅、對話回合推演、網站或 AI 操作流程**）。但如果做完投影片又要另外重頭剪一支教學影片，不但費時，還常發生「影片跟投影片內容不同步」的問題。
+在製作投影片時，有些概念光靠「靜態投影片」很難讓學習者一眼看懂（例如：**前後對照改錯、迷思翻轉 ❌➔✅、對話回合推演、網站或 AI 操作流程**）。但如果做完投影片又要另外重頭剪一支教學影片，不但費時，還常發生「影片跟投影片內容不同步」的問題。
 
 本技能（改編並擴充自 [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)）的核心理念是 **「一次製作，兩份成品（Build Once, Two Outputs）」**：
 
@@ -37,9 +37,7 @@ flowchart LR
 
 | 搭配的簡報格式 | 核心特色 | 環境需求 |
 | :--- | :--- | :--- |
-| **HTML 互動網頁簡報**（`soil-html-deck` 產出的 `.html`） | • 成品 A 直接在 `.html` 投影片內建 **CEFR B1 英文語音旁白＋逐字同步動畫播放器**，學習者自己點開網頁就能邊聽邊看<br>• 成品 B 直接呼叫電腦內建的 Edge / Chrome 自動錄出 `.mp4` 影片＋`.srt` 字幕 | Python 3 與三個 Python 套件（`edge-tts`、`playwright`、`imageio-ffmpeg`），安裝指令會一起裝好；**不需要** HyperFrames、Node.js 或另外安裝 ffmpeg。支援 **Antigravity** 與 **OpenCode** |
-
-> 💡 需要把動畫片段嵌進 `.pptx` 的進階版（PowerPoint＋HyperFrames），請參考原作者的 [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)，本儲存庫不包含。
+| **HTML 互動網頁簡報**（`soil-html-deck` 產出的 `.html`） | • 成品 A 直接在 `.html` 投影片內建 **CEFR B1 英文語音旁白＋逐字同步動畫播放器**，學習者自己點開網頁就能邊聽邊看<br>• 成品 B 直接呼叫電腦內建的 Edge / Chrome 自動錄出 `.mp4` 影片＋`.srt` 字幕 | Python 3 與三個 Python 套件（`edge-tts`、`playwright`、`imageio-ffmpeg`），安裝指令會一起裝好。支援 **Antigravity** 與 **OpenCode** |
 
 ---
 
@@ -112,7 +110,7 @@ flowchart LR
 
 ### 1. What Is `soil-motion-html` & What Problem Does It Solve?
 
-In language teaching and microlearning design, static slides often struggle to show **processes that unfold over time**—such as **step-by-step sentence revision, myth-busting flips (❌ Misconception ➔ ✅ Target Form), multi-turn dialogue pragmatics, or UI walkthroughs**. Yet building a slide deck and then separately editing a video takes double the effort and quickly leads to version drift.
+When making slides, static slides often struggle to show **processes that unfold over time**—such as **step-by-step sentence revision, myth-busting flips (❌ Misconception ➔ ✅ Target Form), multi-turn dialogue pragmatics, or UI walkthroughs**. Yet building a slide deck and then separately editing a video takes double the effort and quickly leads to version drift.
 
 This skill (adapted and expanded from [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)) follows a strict **"Build Once, Two Outputs"** workflow:
 
@@ -136,9 +134,7 @@ Installing this repository gives your AI Agent the **`soil-motion-html`** skill:
 
 | Target Slide Format | Key Features | Requirements |
 | :--- | :--- | :--- |
-| **Interactive HTML Decks** (`.html` built with `soil-html-deck`) | • **Output A** embeds spoken **CEFR B1 English voiceover + word-synced animations** directly inside your `.html` slide deck so learners can press `▶ Play` anytime in their browser<br>• **Output B** uses your local Edge/Chrome browser (`render_video.py`) to export `.mp4` + `.srt` videos | Python 3 plus three Python packages (`edge-tts`, `playwright`, `imageio-ffmpeg`), installed by the prompt below. **No** HyperFrames, Node.js or separate ffmpeg install. Works in **Google Antigravity** and **OpenCode** |
-
-> 💡 Need animated clips embedded in a `.pptx` (PowerPoint + HyperFrames)? See the original [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck); it is not included in this repository.
+| **Interactive HTML Decks** (`.html` built with `soil-html-deck`) | • **Output A** embeds spoken **CEFR B1 English voiceover + word-synced animations** directly inside your `.html` slide deck so learners can press `▶ Play` anytime in their browser<br>• **Output B** uses your local Edge/Chrome browser (`render_video.py`) to export `.mp4` + `.srt` videos | Python 3 plus three Python packages (`edge-tts`, `playwright`, `imageio-ffmpeg`), installed by the prompt below. Works in **Google Antigravity** and **OpenCode** |
 
 ---
 
