@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SKILLS=("soil-motion-html" "soil-motion-deck")
+SKILLS=("soil-motion-html")
 
 TARGETS=(
   "$HOME/.gemini/config/skills"
@@ -21,5 +21,5 @@ for TARGET in "${TARGETS[@]}"; do
 done
 
 echo ""
-echo "🎉 Both SOIL Motion Skills (soil-motion-html & soil-motion-deck) are installed!"
+echo "🎉 The SOIL Motion skill (soil-motion-html) is installed!"
 echo "👉 Open a new chat in Antigravity, OpenCode, Claude Code, or Codex to start animating your teaching slides."

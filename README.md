@@ -1,5 +1,5 @@
-# 🎬 SOIL 動畫教學簡報與解說影片技能集（`soil-motion-deck`）— AI & Language Learning 課堂中英雙語指南
-# 🎬 SOIL Animated Teaching Slides & Explainer Video Skills (`soil-motion-deck`) — Bilingual Student Guide
+# 🎬 SOIL 動畫教學簡報與解說影片技能（`soil-motion-html`）— AI & Language Learning 課堂中英雙語指南
+# 🎬 SOIL Animated Teaching Slides & Explainer Video Skill (`soil-motion-html`) — Bilingual Student Guide
 
 > 🌐 **[🇹🇼 中文版說明與安裝指南（請往下捲動）](#-第一部分中文版使用說明與安裝指南-traditional-chinese)** ｜ **[🇺🇸 Click Here for English Usage & Installation Guide](#-part-2-english-usage--installation-guide)**
 >
@@ -15,7 +15,7 @@
 
 在製作語言學習與微學習（Microlearning）投影片時，有些概念光靠「靜態投影片」很難讓學習者一眼看懂（例如：**前後對照改錯、迷思翻轉 ❌➔✅、對話回合推演、網站或 AI 操作流程**）。但如果做完投影片又要另外重頭剪一支教學影片，不但費時，還常發生「影片跟投影片內容不同步」的問題。
 
-本技能集（改編並擴充自 [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)）的核心理念是 **「一次製作，兩份成品（Build Once, Two Outputs）」**：
+本技能（改編並擴充自 [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)）的核心理念是 **「一次製作，兩份成品（Build Once, Two Outputs）」**：
 
 ```mermaid
 flowchart LR
@@ -31,14 +31,15 @@ flowchart LR
 
 ---
 
-### 二、 內含 2 個技能差在哪裡？課堂上該選哪一個？
+### 二、 這個技能需要什麼？
 
-安裝本儲存庫後，你的 AI Agent 會同時獲得 **2 個動畫簡報技能**。**在「AI & Language Learning」課堂上，強烈推薦優先使用第 1 個（`soil-motion-html`）**：
+安裝本儲存庫後，你的 AI Agent 會獲得 **`soil-motion-html`** 技能：
 
-| 技能名稱 | 搭配的簡報格式 | 核心特色與環境需求 | 課堂選用建議 |
-| :--- | :--- | :--- | :--- |
-| **`soil-motion-html`**<br>🌟 **課堂學生首選**<br>*(HTML 英文旁白動畫版)* | **HTML 互動網頁簡報**<br>（搭配 `soil-html-deck` 產出的 `.html`） | • **完全免裝 HyperFrames！**<br>• 成品 A 直接在 `.html` 投影片內建 **CEFR B1 英文語音旁白＋逐字同步動畫播放器**，不靠老師現場講解，學習者自己點開網頁就能邊聽邊看<br>• 成品 B 直接呼叫電腦內建的 Edge / Chrome 自動錄出 `.mp4` 影片＋`.srt` 字幕 | ✅ **最適合所有同學使用！**<br>只要先用 `soil-html-deck` 做好網頁投影片，就能用這個技能挑 2～4 頁做成有聲英文動畫頁與 MP4 影片（支援 **Antigravity** 與 **OpenCode**） |
-| **`soil-motion-deck`**<br>🎬 *進階 PPTX 原版*<br>*(PowerPoint + HyperFrames 版)* | **PowerPoint 簡報**<br>（搭配 `soil-teaching-deck` 的 `.pptx`） | • 先用 `HyperFrames` 做出完整配音字幕解說片（成品 B），再從「靜音孿生版」剪出無聲 MP4 片段嵌進 `.pptx` 投影片（成品 A）供講者現場邊播邊講<br>• *需額外安裝 `claude-motion-explainer`、`HyperFrames` 與 `ffmpeg`* | 適合進階需要產出 **內嵌影片之 `.pptx` 檔**、且電腦已安裝好 HyperFrames 環境的使用者 |
+| 搭配的簡報格式 | 核心特色 | 環境需求 |
+| :--- | :--- | :--- |
+| **HTML 互動網頁簡報**（`soil-html-deck` 產出的 `.html`） | • 成品 A 直接在 `.html` 投影片內建 **CEFR B1 英文語音旁白＋逐字同步動畫播放器**，學習者自己點開網頁就能邊聽邊看<br>• 成品 B 直接呼叫電腦內建的 Edge / Chrome 自動錄出 `.mp4` 影片＋`.srt` 字幕 | Python 3 與三個 Python 套件（`edge-tts`、`playwright`、`imageio-ffmpeg`），安裝指令會一起裝好；**不需要** HyperFrames、Node.js 或另外安裝 ffmpeg。支援 **Antigravity** 與 **OpenCode** |
+
+> 💡 需要把動畫片段嵌進 `.pptx` 的進階版（PowerPoint＋HyperFrames），請參考原作者的 [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)，本儲存庫不包含。
 
 ---
 
@@ -52,18 +53,18 @@ flowchart LR
 直接複製以下**整段話**貼給你的 **Antigravity** 或 **OpenCode**：
 ```text
 請幫我完成以下兩件事：
-1. 把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 到暫存資料夾，並執行裡面的安裝腳本（或將 skills/ 底下的 soil-motion-html 與 soil-motion-deck 兩個完整資料夾複製到 ~/.gemini/config/skills/、~/.config/opencode/skills/、~/.agents/skills/ 與 ~/.claude/skills/，若資料夾不存在請自動建立），確認 SKILL.md、scripts/、templates/、references/ 與 docs/ 都完整包含。
+1. 把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 到暫存資料夾，並執行裡面的安裝腳本（或將 skills/ 底下的 soil-motion-html 完整資料夾複製到 ~/.gemini/config/skills/、~/.config/opencode/skills/、~/.agents/skills/ 與 ~/.claude/skills/，若資料夾不存在請自動建立），確認 SKILL.md、scripts/、templates/、references/ 與 docs/ 都完整包含。
 2. 幫我執行 pip install edge-tts playwright imageio-ffmpeg 安裝好語音旁白與 MP4 影片匯出套件。
 ```
 
 ##### 選項 2：如果你只用 Google Antigravity
 ```text
-請幫我把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 下來，將 skills/ 底下的 soil-motion-html 與 soil-motion-deck 兩個完整資料夾複製到我的 ~/.gemini/config/skills/ 目錄下（若資料夾不存在請自動建立），並幫我執行 pip install edge-tts playwright imageio-ffmpeg 安裝必備套件。
+請幫我把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 下來，將 skills/ 底下的 soil-motion-html 完整資料夾複製到我的 ~/.gemini/config/skills/ 目錄下（若資料夾不存在請自動建立），並幫我執行 pip install edge-tts playwright imageio-ffmpeg 安裝必備套件。
 ```
 
 ##### 選項 3：如果你只用 OpenCode
 ```text
-請幫我把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 下來，將 skills/ 底下的 soil-motion-html 與 soil-motion-deck 兩個完整資料夾同時複製到我的 ~/.config/opencode/skills/ 與 ~/.agents/skills/ 目錄下（若資料夾不存在請自動建立），並幫我執行 pip install edge-tts playwright imageio-ffmpeg 安裝必備套件。
+請幫我把 https://github.com/MeiChen-ai/soil-motion-deck.git 完整 clone 下來，將 skills/ 底下的 soil-motion-html 完整資料夾同時複製到我的 ~/.config/opencode/skills/ 與 ~/.agents/skills/ 目錄下（若資料夾不存在請自動建立），並幫我執行 pip install edge-tts playwright imageio-ffmpeg 安裝必備套件。
 ```
 
 *(💡 註：`render_video.py` 直接呼叫你電腦原本就有的 Microsoft Edge 或 Google Chrome 瀏覽器錄製影片，**不需要**另外下載龐大的 Chromium 瀏覽器檔案！)*
@@ -104,21 +105,16 @@ flowchart LR
 我已經試聽確認動畫頁沒問題了！請使用 soil-motion-html 的 `render_video.py`，把 `[組好的投影片檔名.html]` 裡的動畫頁錄製成 1280x720 的 MP4 解說影片與 SRT 字幕，存到 `videos/` 資料夾，並用 `--burn` 把英文字幕燒錄進畫面（同時用 `--join` 合併成一支完整影片）。
 ```
 
-#### 📋 範本 4：使用原版 `soil-motion-deck` 製作 `.pptx` 內嵌動畫簡報＋HyperFrames 影片（進階選用）
-```text
-請使用 soil-motion-deck 技能，幫我為【教學主題】設計一份可編輯的 .pptx 教學簡報與 MP4 解說影片（對象：【教學對象】，時間：【上課時間】）。請先依 SOIL 引擎一～三規劃每頁角色並標出 2–3 頁 🎬 動畫頁讓我確認！
-```
-
 ---
 ---
 
 ## 🇺🇸 Part 2: English Usage & Installation Guide
 
-### 1. What Is `soil-motion-deck` & What Problem Does It Solve?
+### 1. What Is `soil-motion-html` & What Problem Does It Solve?
 
 In language teaching and microlearning design, static slides often struggle to show **processes that unfold over time**—such as **step-by-step sentence revision, myth-busting flips (❌ Misconception ➔ ✅ Target Form), multi-turn dialogue pragmatics, or UI walkthroughs**. Yet building a slide deck and then separately editing a video takes double the effort and quickly leads to version drift.
 
-This skill package (adapted and expanded from [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)) follows a strict **"Build Once, Two Outputs"** workflow:
+This skill (adapted and expanded from [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck)) follows a strict **"Build Once, Two Outputs"** workflow:
 
 ```mermaid
 flowchart LR
@@ -134,14 +130,15 @@ flowchart LR
 
 ---
 
-### 2. Which of the 2 Included Skills Should I Choose?
+### 2. What Does the Skill Need?
 
-Installing this repository gives your AI Agent **2 motion skills**. **For the "AI & Language Learning" course, we strongly recommend Skill 1 (`soil-motion-html`)**:
+Installing this repository gives your AI Agent the **`soil-motion-html`** skill:
 
-| Skill Name | Target Slide Format | Key Features & Requirements | Classroom Recommendation |
-| :--- | :--- | :--- | :--- |
-| **`soil-motion-html`**<br>🌟 **Recommended for Class**<br>*(HTML Narrated Motion Edition)* | **Interactive HTML Decks**<br>(built with `soil-html-deck`) | • **Zero HyperFrames setup required!**<br>• **Output A** embeds spoken **CEFR B1 English voiceover + word-synced animations** directly inside your `.html` slide deck so learners can press `▶ Play` anytime in their browser<br>• **Output B** uses your local Edge/Chrome browser (`render_video.py`) to export `.mp4` + `.srt` videos | ✅ **Best choice for all students!**<br>Works seamlessly in both **Google Antigravity** and **OpenCode** with only lightweight Python packages (`edge-tts`, `playwright`, `imageio-ffmpeg`) |
-| **`soil-motion-deck`**<br>🎬 *Advanced PPTX Edition*<br>*(PowerPoint + HyperFrames)* | **PowerPoint Decks**<br>(`.pptx` built with `soil-teaching-deck`) | • Renders a full explainer video in `HyperFrames` (Output B), then cuts silent, caption-free MP4 clips from a "silent twin" render and embeds them into `.pptx` slides (Output A) for live teacher narration<br>• *Requires installing `claude-motion-explainer`, `HyperFrames`, and `ffmpeg`* | For advanced users who specifically need `.pptx` files with embedded silent video clips and have `HyperFrames` installed |
+| Target Slide Format | Key Features | Requirements |
+| :--- | :--- | :--- |
+| **Interactive HTML Decks** (`.html` built with `soil-html-deck`) | • **Output A** embeds spoken **CEFR B1 English voiceover + word-synced animations** directly inside your `.html` slide deck so learners can press `▶ Play` anytime in their browser<br>• **Output B** uses your local Edge/Chrome browser (`render_video.py`) to export `.mp4` + `.srt` videos | Python 3 plus three Python packages (`edge-tts`, `playwright`, `imageio-ffmpeg`), installed by the prompt below. **No** HyperFrames, Node.js or separate ffmpeg install. Works in **Google Antigravity** and **OpenCode** |
+
+> 💡 Need animated clips embedded in a `.pptx` (PowerPoint + HyperFrames)? See the original [`mathruffian-dot/soil-motion-deck`](https://github.com/mathruffian-dot/soil-motion-deck); it is not included in this repository.
 
 ---
 
@@ -151,22 +148,22 @@ You do **not** need to manually hunt for hidden skill folders! Simply open your 
 
 #### 💬 Copy & Paste One Prompt to Your AI Agent
 
-##### Option 1: Universal Install Prompt (Installs Both Skills to Antigravity, OpenCode, Claude Code & Codex + Required Python Packages)
+##### Option 1: Universal Install Prompt (Installs the Skill to Antigravity, OpenCode, Claude Code & Codex + Required Python Packages)
 Copy and paste this entire block into **Antigravity** or **OpenCode**:
 ```text
 Please help me complete these two setup steps:
-1. Clone https://github.com/MeiChen-ai/soil-motion-deck.git into a temporary folder and run its installer script (or copy both `soil-motion-html` and `soil-motion-deck` from `skills/` into `~/.gemini/config/skills/`, `~/.config/opencode/skills/`, `~/.agents/skills/`, and `~/.claude/skills/`, creating the directories if they do not exist). Make sure `SKILL.md`, `scripts/`, `templates/`, `references/`, and `docs/` are all preserved.
+1. Clone https://github.com/MeiChen-ai/soil-motion-deck.git into a temporary folder and run its installer script (or copy `soil-motion-html` from `skills/` into `~/.gemini/config/skills/`, `~/.config/opencode/skills/`, `~/.agents/skills/`, and `~/.claude/skills/`, creating the directories if they do not exist). Make sure `SKILL.md`, `scripts/`, `templates/`, `references/`, and `docs/` are all preserved.
 2. Run `pip install edge-tts playwright imageio-ffmpeg` so neural voiceover generation and MP4 video rendering are ready to use.
 ```
 
 ##### Option 2: Google Antigravity Only
 ```text
-Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy both `soil-motion-html` and `soil-motion-deck` from `skills/` into my global Antigravity skills folder at `~/.gemini/config/skills/` (create the folder if needed), and run `pip install edge-tts playwright imageio-ffmpeg`.
+Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy `soil-motion-html` from `skills/` into my global Antigravity skills folder at `~/.gemini/config/skills/` (create the folder if needed), and run `pip install edge-tts playwright imageio-ffmpeg`.
 ```
 
 ##### Option 3: OpenCode Only
 ```text
-Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy both `soil-motion-html` and `soil-motion-deck` from `skills/` into `~/.config/opencode/skills/` and `~/.agents/skills/` (create the folders if needed), and run `pip install edge-tts playwright imageio-ffmpeg`.
+Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy `soil-motion-html` from `skills/` into `~/.config/opencode/skills/` and `~/.agents/skills/` (create the folders if needed), and run `pip install edge-tts playwright imageio-ffmpeg`.
 ```
 
 *(💡 Note: `render_video.py` uses your computer's pre-installed Microsoft Edge or Google Chrome browser via `channel="msedge"`, so you do **not** need to run `playwright install` to download extra browsers!)*
@@ -207,11 +204,6 @@ Please use the `soil-motion-html` skill to turn slides [e.g., 3, 6, 8] of `[your
 I have reviewed the trial motion slides and they look great! Please use `render_video.py` from `soil-motion-html` to record all animated slides in `[your-motion-deck.html]` into 1280x720 MP4 videos + SRT subtitles inside the `videos/` folder, burn the English subtitles into the video (`--burn`), and also combine them into a single `full_explainer.mp4` video (`--join`).
 ```
 
-#### 📋 Template 4: Build an Animated `.pptx` Deck + HyperFrames MP4 Film (`soil-motion-deck` — Advanced)
-```text
-Please use the `soil-motion-deck` skill to plan an editable `.pptx` teaching deck and an MP4 explainer video on [Topic] for [Target Learners & Duration]. Please run SOIL Engines 1–3 first and mark 2–3 candidate 🎬 animated slides for my confirmation!
-```
-
 ---
 
 ### 6. Repository Structure & Credits
@@ -223,21 +215,15 @@ soil-motion-deck/
 ├── NOTICE.md                                 # Upstream & third-party attribution notices
 ├── docs/
 │   ├── TUTORIAL_ZH.md                        # Complete Traditional Chinese Tutorial
-│   ├── TUTORIAL_EN.md                        # Complete English Tutorial & Technical Reference
-│   └── (deck-overview-1.png, deck-overview-2.png, film-sheet.png)
+│   └── TUTORIAL_EN.md                        # Complete English Tutorial & Technical Reference
 ├── install/
 │   ├── install.ps1                           # Windows PowerShell installer (Antigravity/OpenCode/Claude/Codex)
 │   └── install.sh                            # macOS / Linux Bash installer
 └── skills/
-    ├── soil-motion-html/                     # 🌟 Skill 1 (Classroom Recommended): HTML Narrated Motion Slides + MP4
-    │   ├── SKILL.md
-    │   ├── scripts/ (make_narration.py, build_motion.py, render_video.py, check_motion.js)
-    │   ├── templates/ (motion_engine.js, motion.css)
-    │   └── references/lessons.md
-    └── soil-motion-deck/                     # 🎬 Skill 2 (Original PPTX + HyperFrames Edition)
+    └── soil-motion-html/                     # 🌟 HTML Narrated Motion Slides + MP4
         ├── SKILL.md
-        ├── scripts/ (make_silent.py, cut_clips.py, thumbs.py, export_thumbs.ps1)
-        ├── templates/ (deck_helpers.js, example_pythagoras.js, package.json)
+        ├── scripts/ (make_narration.py, build_motion.py, render_video.py, check_motion.js)
+        ├── templates/ (motion_engine.js, motion.css)
         └── references/lessons.md
 ```
 

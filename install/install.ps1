@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$Skills = @("soil-motion-html", "soil-motion-deck")
+$Skills = @("soil-motion-html")
 
 $Targets = @(
   @{ Name = "Google Antigravity"; Path = "$HOME\.gemini\config\skills" },
@@ -26,5 +26,5 @@ foreach ($Target in $Targets) {
   Write-Host "[OK] Installed ($($Skills -join ', ')) to $($Target.Name): $DestRoot" -ForegroundColor Green
 }
 
-Write-Host "`n🎉 Both SOIL Motion Skills (soil-motion-html & soil-motion-deck) are installed!" -ForegroundColor Cyan
+Write-Host "`n🎉 The SOIL Motion skill (soil-motion-html) is installed!" -ForegroundColor Cyan
 Write-Host "👉 Open a new chat in Antigravity, OpenCode, Claude Code, or Codex to start animating your teaching slides." -ForegroundColor Cyan
