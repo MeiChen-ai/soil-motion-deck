@@ -41,7 +41,7 @@ flowchart LR
 
 ---
 
-### 三、 Step 0：先準備一個專案資料夾（每份投影片一個）
+### 三、 Step 0：先準備一個專案資料夾
 
 安裝技能只要做一次，在哪裡裝都一樣；但**製作動畫時，AI 只讀得到你目前打開的資料夾**，做出來的試做檔、旁白與影片也會存在這個資料夾裡。所以開始之前，請先：
 
@@ -150,7 +150,7 @@ Installing this repository gives your AI Agent the **`soil-motion-html`** skill:
 
 ---
 
-### 3. Step 0: Make a Project Folder First (One Folder per Deck)
+### 3. Step 0: Make a Project Folder First
 
 You install the skill only once, and it does not matter which folder you are in. But **when you make animations, the AI can only read the folder you have open**, and it saves the trial file, narration and video in that folder. So before you start:
 
