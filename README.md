@@ -47,7 +47,7 @@ flowchart LR
 
 1. 在桌面建立一個**英文名稱、沒有空格**的資料夾，例如 `Week13_Motion`（整個路徑最好也不要有中文）。
 2. 把要做動畫的 `.html` 投影片**複製**一份放進去（用複製的，原檔就不會被改到）。
-3. 用 AI Agent 打開這個資料夾：**Antigravity** 用 Open Folder 選它；**OpenCode** 在這個資料夾裡啟動。
+3. 用 AI Agent 打開這個資料夾：**Antigravity** 用 New Project 選這個資料夾；**OpenCode** 在這個資料夾裡啟動。
 4. 開一個**新對話**，再進行下面的安裝與製作。
 
 完成後，`_motion_trial.html` 試做檔、`slides/motion/` 旁白資料與 `videos/` 影片都會在這個資料夾裡，交作業時直接從這裡拿。
@@ -156,7 +156,7 @@ You install the skill only once, and it does not matter which folder you are in.
 
 1. On your desktop, create a folder with an **English name and no spaces**, e.g. `Week13_Motion` (avoid Chinese characters anywhere in the path).
 2. **Copy** the `.html` deck you want to animate into it (a copy keeps your original safe).
-3. Open this folder in your AI agent: in **Antigravity**, use Open Folder; in **OpenCode**, start it inside this folder.
+3. Open this folder in your AI agent: in **Antigravity**, use New Project and choose this folder; in **OpenCode**, start it inside this folder.
 4. Start a **new chat**, then install and build as described below.
 
 When you finish, the `_motion_trial.html` trial file, the `slides/motion/` narration files and the `videos/` folder will all be in this folder, ready to submit.
