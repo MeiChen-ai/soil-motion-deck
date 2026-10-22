@@ -41,7 +41,20 @@ flowchart LR
 
 ---
 
-### 三、 Step 1：如何安裝？（只需做一次，支援 Antigravity / OpenCode / Claude Code / Codex）
+### 三、 Step 0：先準備一個專案資料夾（每份投影片一個）
+
+安裝技能只要做一次，在哪裡裝都一樣；但**製作動畫時，AI 只讀得到你目前打開的資料夾**，做出來的試做檔、旁白與影片也會存在這個資料夾裡。所以開始之前，請先：
+
+1. 在桌面建立一個**英文名稱、沒有空格**的資料夾，例如 `Week13_Motion`（整個路徑最好也不要有中文）。
+2. 把要做動畫的 `.html` 投影片**複製**一份放進去（用複製的，原檔就不會被改到）。
+3. 用 AI Agent 打開這個資料夾：**Antigravity** 用 Open Folder 選它；**OpenCode** 在這個資料夾裡啟動。
+4. 開一個**新對話**，再進行下面的安裝與製作。
+
+完成後，`_motion_trial.html` 試做檔、`slides/motion/` 旁白資料與 `videos/` 影片都會在這個資料夾裡，交作業時直接從這裡拿。
+
+---
+
+### 四、 Step 1：如何安裝？（只需做一次，支援 Antigravity / OpenCode / Claude Code / Codex）
 
 你**完全不需要自己開終端機找資料夾路徑**！只要打開你正在使用的 AI Agent（**Google Antigravity** 或 **OpenCode**），複製下方對應的一段話貼進對話框，AI 就會自動幫你把技能與必備的 Python 語音／錄影套件全部安裝好。
 
@@ -69,7 +82,7 @@ flowchart LR
 
 ---
 
-### 四、 Step 2：哪些投影片適合做成動畫頁？（選頁黃金原則）
+### 五、 Step 2：哪些投影片適合做成動畫頁？（選頁黃金原則）
 
 一份 10～15 頁的教學簡報，**不需要每一頁都做動畫**（通常挑 **2～4 頁關鍵頁** 效果最好）：
 
@@ -82,26 +95,25 @@ flowchart LR
 
 ---
 
-### 五、 Step 3：課堂實戰 Prompt 範本（直接複製修改 `【...】` 即可使用）
+### 六、 Step 3：貼一段話開始，之後回答 AI 的問題
 
-#### 📋 範本 1：請 AI 分析你的 HTML 投影片，推薦哪幾頁適合做動畫（Step 1 挑頁）
+在 Step 0 的資料夾、新對話裡，**只要貼這一段**（把 `[...]` 換成你的檔名）：
+
+#### 📋 開始範本：請 AI 分析投影片，推薦哪幾頁適合做動畫
 ```text
 請使用 soil-motion-html 技能，幫我讀取資料夾裡的 `[你的投影片檔名.html]`，逐頁分析哪些頁面適合改成「英文旁白動畫頁」。請用表格列出每頁是「很適合／可以做／不需要」以及預計「動畫怎麼演」，先讓我確認要挑哪幾頁！
 ```
 
-#### 📋 範本 2：把選定的頁面做成「英文旁白動畫頁」（產出成品 A）
-```text
-請使用 soil-motion-html 技能，把 `[你的投影片檔名.html]` 的第 【例如：3, 6, 8】 頁做成英文旁白動畫頁：
-1. 在 `slides/motion/[簡報名稱]/` 建立 spec 資料夾並備份 `original.html`。
-2. 為這幾頁撰寫清楚易懂的 CEFR B1 英文分段旁白（每頁約 30–50 秒），用 `make_narration.py` 產生 MP3 語音與逐字時間軸。
-3. 設計左欄步驟重點＋右欄固定高度動畫視窗版面，對齊逐字秒數寫好 `configs.js`（讓念到關鍵字的瞬間觸發高亮、展開或 ❌/✅ 標記）。
-4. 用 `build_motion.py` 組出 `_motion_trial.html` 試做檔並檢查版面無溢出，把試做檔路徑與每頁旁白全文表格交給我試聽！
-```
+接下來 AI 會一步一步問你，照下表回答即可：
 
-#### 📋 範本 3：把做好的動畫頁匯出成「MP4 解說影片＋SRT 字幕」（產出成品 B）
-```text
-我已經試聽確認動畫頁沒問題了！請使用 soil-motion-html 的 `render_video.py`，把 `[組好的投影片檔名.html]` 裡的動畫頁錄製成 1280x720 的 MP4 解說影片與 SRT 字幕，存到 `videos/` 資料夾，並用 `--burn` 把英文字幕燒錄進畫面（同時用 `--join` 合併成一支完整影片）。
-```
+| AI 會問 | 你可以這樣回 |
+| :--- | :--- |
+| 要把哪幾頁做成動畫？ | 「第 3 頁和第 6 頁。」 |
+| （做好 `_motion_trial.html` 試做檔後）要不要轉成 MP4 影片？ | **先別急著答應！** 先用 Chrome 或 Edge 打開試做檔、按 ▶ Play 試聽，有問題就請它修，例如：「第 6 頁的 ✅ 出現太早，請在念到 could 時才出現。」確認沒問題後再回：「好，請轉成 MP4，並把英文字幕燒進影片。」 |
+
+> ⚠️ 影片是從試做檔錄出來的，試做檔有錯，影片也會跟著錯，所以**一定要先試聽、修好，再轉影片**。
+
+> 💡 如果 AI 列完表就停住、沒有繼續問：直接說「請把第 3、6 頁做成動畫」；做完動畫沒問影片：直接說「請轉成 MP4，並把英文字幕燒進影片」。
 
 ---
 ---
@@ -138,7 +150,20 @@ Installing this repository gives your AI Agent the **`soil-motion-html`** skill:
 
 ---
 
-### 3. Step 1: One-Time Installation (Supports Antigravity, OpenCode, Claude Code & Codex)
+### 3. Step 0: Make a Project Folder First (One Folder per Deck)
+
+You install the skill only once, and it does not matter which folder you are in. But **when you make animations, the AI can only read the folder you have open**, and it saves the trial file, narration and video in that folder. So before you start:
+
+1. On your desktop, create a folder with an **English name and no spaces**, e.g. `Week13_Motion` (avoid Chinese characters anywhere in the path).
+2. **Copy** the `.html` deck you want to animate into it (a copy keeps your original safe).
+3. Open this folder in your AI agent: in **Antigravity**, use Open Folder; in **OpenCode**, start it inside this folder.
+4. Start a **new chat**, then install and build as described below.
+
+When you finish, the `_motion_trial.html` trial file, the `slides/motion/` narration files and the `videos/` folder will all be in this folder, ready to submit.
+
+---
+
+### 4. Step 1: One-Time Installation (Supports Antigravity, OpenCode, Claude Code & Codex)
 
 You do **not** need to manually hunt for hidden skill folders! Simply open your AI Agent (**Google Antigravity** or **OpenCode**), copy one of the blocks below, and paste it directly into the chat box.
 
@@ -166,7 +191,7 @@ Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy `soil-moti
 
 ---
 
-### 4. Step 2: Which Slides Should You Animate? (Golden Rules)
+### 5. Step 2: Which Slides Should You Animate? (Golden Rules)
 
 In a 10–15 slide teaching deck, **do not animate every slide**—animating **2 to 4 key slides** creates the strongest learning impact:
 
@@ -179,30 +204,29 @@ In a 10–15 slide teaching deck, **do not animate every slide**—animating **2
 
 ---
 
-### 5. Step 3: Ready-to-Use Classroom Prompt Templates
+### 6. Step 3: Paste One Prompt, Then Answer the AI's Questions
 
-#### 📋 Template 1: Inspect an HTML Deck & Recommend Slides to Animate (`soil-motion-html`)
+In your Step 0 folder, in a new chat, **paste only this prompt** (replace `[...]` with your file name):
+
+#### 📋 Starter Prompt: Inspect Your Deck & Recommend Slides to Animate
 ```text
 Please use the `soil-motion-html` skill to inspect `[your-deck.html]` and evaluate each slide for animation. Give me a table categorizing slides into "Great Fit / Possible / Keep Static" with a one-sentence description of how each candidate animation would play out, so I can choose which 2–4 slides to animate!
 ```
 
-#### 📋 Template 2: Turn Selected HTML Slides into English-Narrated Motion Slides (Output A)
-```text
-Please use the `soil-motion-html` skill to turn slides [e.g., 3, 6, 8] of `[your-deck.html]` into English-narrated animated slides:
-1. Create the spec folder at `slides/motion/[deck-name]/` and back up `original.html`.
-2. Write clear CEFR B1-level segmented English narration (30–50 seconds per slide) and run `make_narration.py` to generate MP3 audio and exact word timings.
-3. Build the two-column motion layouts (`slides.html` + `slides.css`) and word-synced timeline (`configs.js`) so visual highlights, folding cards, and ❌/✅ stamps trigger right as each keyword is spoken.
-4. Compile `<deck>_motion_trial.html` with `build_motion.py`, verify zero layout overflow, and share the trial file path and full narration table for my review!
-```
+The AI will then ask you questions one at a time. Here is how to answer:
 
-#### 📋 Template 3: Export Animated HTML Slides to MP4 Explainer Videos + SRT Subtitles (Output B)
-```text
-I have reviewed the trial motion slides and they look great! Please use `render_video.py` from `soil-motion-html` to record all animated slides in `[your-motion-deck.html]` into 1280x720 MP4 videos + SRT subtitles inside the `videos/` folder, burn the English subtitles into the video (`--burn`), and also combine them into a single `full_explainer.mp4` video (`--join`).
-```
+| The AI asks | You can reply |
+| :--- | :--- |
+| Which slides should I animate? | "Slides 3 and 6, please." |
+| (After making the `_motion_trial.html` trial file) Shall I turn it into an MP4 video? | **Not yet!** First open the trial file in Chrome or Edge, press ▶ Play and listen. Ask for fixes, e.g. "On slide 6 the ✅ appears too early: show it when the voice says 'could'." When it is right, reply: "Yes, please make the MP4 and burn the English subtitles into the video." |
+
+> ⚠️ The video is recorded from the trial file, so any mistake in the trial file ends up in the video too. **Always listen and fix first, then make the video.**
+
+> 💡 If the AI stops after the table, just say "Please animate slides 3 and 6." If it does not ask about a video after the animations are done, say "Please make the MP4 and burn the English subtitles into the video."
 
 ---
 
-### 6. Repository Structure & Credits
+### 7. Repository Structure & Credits
 
 ```text
 soil-motion-deck/
