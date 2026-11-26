@@ -52,6 +52,8 @@ flowchart LR
 
 完成後，`_motion_trial.html` 試做檔、`slides/motion/` 旁白資料與 `videos/` 影片都會在這個資料夾裡，交作業時直接從這裡拿。
 
+> 💡 Week 13 投影片把這一步放在 Step 2（安裝之後）。先安裝或先建資料夾都可以，順序不影響。
+
 ---
 
 ### 四、 Step 1：如何安裝？（只需做一次，支援 Antigravity / OpenCode / Claude Code / Codex）
@@ -160,6 +162,8 @@ You install the skill only once, and it does not matter which folder you are in.
 4. Start a **new chat**, then install and build as described below.
 
 When you finish, the `_motion_trial.html` trial file, the `slides/motion/` narration files and the `videos/` folder will all be in this folder, ready to submit.
+
+> 💡 The Week 13 slides put this step second (after installing). Either order works: install first or make the folder first.
 
 ---
 
