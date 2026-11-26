@@ -104,7 +104,7 @@ bash ./soil-motion-html-skill/install/install.sh
 1. **Step 1 — 讀投影片、挑頁（先給使用者確認）**：
    * AI 會先讀取整份 HTML 投影片，找出**「隨時間改變本身就是教學重點」**的頁面（例如：介面操作流程、因果／前後對照、迷思翻轉、分數累加或條件對應）。
    * 靜態頁（封面、比較表、清單、檢查表、Your Turn 練習頁）則保留讓學生慢慢閱讀。
-   * AI 會以表格回報每頁「很適合／可以做／不需要」及「動畫怎麼演」，由你決定要做哪幾頁（建議每份簡報挑 2～4 頁關鍵頁）。
+   * AI 會以表格回報每頁「很適合／可以做／不需要」及「動畫怎麼演」，由你決定要做哪幾頁（建議每份簡報挑 3～5 頁關鍵頁）。
 2. **Step 2 — 撰寫英文旁白並產生逐字時間軸（`make_narration.py`）**：
    * 預設採用 **B1 程度短句英文、有聲旁白**（主講聲音 `N` 為 `en-US-JennyNeural`，語速 `-6%`；畫面內 App 朗讀聲音 `A` 為 `en-GB-RyanNeural`）。
    * 每頁約 30～70 秒，分為 4～7 個段落寫入 `<spec>/sN/segments.json`，執行：
@@ -263,7 +263,7 @@ bash ./soil-motion-html-skill/install/install.sh
      * Myth-busting flips (common misconception → ❌ stamp → ✅ principle)
      * Cumulative scoring or 1-to-1 rubric mapping
    * Keep static reference slides (cover, comparison tables, checklists, Your Turn tasks) static so students can read at their own pace.
-   * Present a table categorizing slides into **Great Fit / Possible / Keep Static** with a 1-sentence animation summary for user approval (typically 2–4 slides per deck).
+   * Present a table categorizing slides into **Great Fit / Possible / Keep Static** with a 1-sentence animation summary for user approval (typically 3–5 slides per deck).
 2. **Step 2 — Generate Segmented English Narration (`make_narration.py`)**:
    * Default to **spoken B1-level English narration** (narrator voice `N`: `en-US-JennyNeural` at `-6%`; secondary app voice `A`: `en-GB-RyanNeural`).
    * Aim for 30–70 seconds per slide across 4–7 segments in `<spec>/sN/segments.json`:

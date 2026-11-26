@@ -112,7 +112,7 @@ Before writing any code, inspect all slides in the HTML deck (`python -I` with `
 ### ❌ Slides That Should Stay Static
 * Cover slides, comparison tables, vocabulary lists, checklists, question banks, reference cards, and "Your Turn" hands-on instructions. Students need to read these at their own pace without waiting for a timeline.
 
-> 📌 **User Confirmation First**: Always present a summary table classifying slides as **Great Fit / Possible / Keep Static** with a one-sentence description of the proposed animation, and let the user decide which slides to include (typically 2–4 slides per deck).
+> 📌 **User Confirmation First**: Always present a summary table classifying slides as **Great Fit / Possible / Keep Static** with a one-sentence description of the proposed animation, and let the user decide which slides to include (typically 3–5 slides per deck).
 
 ---
 
