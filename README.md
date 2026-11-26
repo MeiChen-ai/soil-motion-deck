@@ -19,14 +19,14 @@
 
 ```mermaid
 flowchart LR
-    Deck["📄 教學投影片<br/>挑选 2–4 頁關鍵頁"] --> TTS["🎙️ 分段語音旁白<br/>+ 逐字時間軸 (edge-tts)"]
+    Deck["📄 教學投影片<br/>挑選 3–5 頁關鍵頁"] --> TTS["🎙️ 分段語音旁白<br/>+ 逐字時間軸 (edge-tts)"]
     TTS --> OutA["✨ 成品 A：會動的教學投影片<br/>按 ▶ Play 跟著旁白一步步演"]
     TTS --> OutB["🎬 成品 B：MP4 解說影片 + SRT 字幕<br/>100% 同步，供預習／補課／上傳"]
 ```
 
 | 成品 | 產出內容 | 適用情境 |
 | :--- | :--- | :--- |
-| **成品 A：動畫教學投影片** | 將簡報中 2～4 個關鍵頁升級為**可按 `▶ Play` 播放的步驟動畫頁**：<br>• 畫面上的重點高亮、展開卡片、對話泡泡、打字動作、❌/✅ 印章，精準對齊旁白的**每一個字（Word-Boundary Timestamps）**<br>• 內建 `🔊 Voice on / 🔇 Voice off`、`⟲ Replay` 與分段跳轉按鈕（Chips） | 課堂投影教學、學生課後自學（瀏覽器直接開啟 HTML、Teaching Cockpit） |
+| **成品 A：動畫教學投影片** | 將簡報中 3～5 個關鍵頁升級為**可按 `▶ Play` 播放的步驟動畫頁**：<br>• 畫面上的重點高亮、展開卡片、對話泡泡、打字動作、❌/✅ 印章，精準對齊旁白的**每一個字（Word-Boundary Timestamps）**<br>• 內建 `🔊 Voice on / 🔇 Voice off`、`⟲ Replay` 與分段跳轉按鈕（Chips） | 課堂投影教學、學生課後自學（瀏覽器直接開啟 HTML、Teaching Cockpit） |
 | **成品 B：獨立解說影片**<br>（`.mp4` ＋ `.srt` 字幕） | 直接從同一份動畫與同一條旁白音軌自動錄製合成 **1280×720 高畫質 `.mp4` 影片與 `.srt` 字幕檔**（支援軟字幕或 `--burn` 燒錄字幕、以及 `--join` 多頁合併成一支完整影片） | 課前預習、缺課補課、上傳至 YouTube / 教學平台 |
 
 ---
@@ -84,7 +84,7 @@ flowchart LR
 
 ### 五、 Step 2：哪些投影片適合做成動畫頁？（選頁黃金原則）
 
-一份 10～15 頁的教學簡報，**不需要每一頁都做動畫**（通常挑 **2～4 頁關鍵頁** 效果最好）：
+一份 10～15 頁的教學簡報，**不需要每一頁都做動畫**（通常挑 **3～5 頁關鍵頁** 效果最好）：
 
 * ✅ **非常適合做動畫的頁面（「隨時間改變」本身就是教學重點）**：
   1. **迷思翻轉／病句改錯（Myth-Busting & Error Correction）**：先出現學習者常犯的錯誤句 ➔ 蓋上 ❌ 印章並標出問題字 ➔ 展開 ✅ 正確改寫與語用提示。
@@ -128,14 +128,14 @@ This skill (adapted and expanded from [`mathruffian-dot/soil-motion-deck`](https
 
 ```mermaid
 flowchart LR
-    Deck["📄 Teaching Deck<br/>Pick 2–4 Key Slides"] --> TTS["🎙️ Segmented Narration<br/>+ Word Timestamps (edge-tts)"]
+    Deck["📄 Teaching Deck<br/>Pick 3–5 Key Slides"] --> TTS["🎙️ Segmented Narration<br/>+ Word Timestamps (edge-tts)"]
     TTS --> OutA["✨ Output A: Interactive Animated Slides<br/>Click ▶ Play for Word-Synced Motion"]
     TTS --> OutB["🎬 Output B: MP4 Video + SRT Subtitles<br/>100% Synced for Preview & Review"]
 ```
 
 | Output | Format & Features | Target Use Case |
 | :--- | :--- | :--- |
-| **Output A: Animated Teaching Slides** | Upgrades 2–4 key slides into interactive **`▶ Play` step-by-step animated slides**:<br>• Visual actions (callouts, folding cards, chat bubbles, typing effects, ❌/✅ stamps) are anchored to **exact word-level timestamps (`WordBoundary`)** from `edge-tts`<br>• Includes `🔊 Voice on / 🔇 Voice off`, `⟲ Replay`, clickable chapter chips, and a live progress bar | Live classroom projection & self-paced student review (standalone HTML deck or Teaching Cockpit) |
+| **Output A: Animated Teaching Slides** | Upgrades 3–5 key slides into interactive **`▶ Play` step-by-step animated slides**:<br>• Visual actions (callouts, folding cards, chat bubbles, typing effects, ❌/✅ stamps) are anchored to **exact word-level timestamps (`WordBoundary`)** from `edge-tts`<br>• Includes `🔊 Voice on / 🔇 Voice off`, `⟲ Replay`, clickable chapter chips, and a live progress bar | Live classroom projection & self-paced student review (standalone HTML deck or Teaching Cockpit) |
 | **Output B: Standalone Explainer Video**<br>(`.mp4` + `.srt` subtitles) | Automatically records Output A and muxes the exact same voiceover track and auto-chunked `.srt` subtitles into a **1280×720 H.264 `.mp4` video** (supports soft subtitle tracks, `--burn` for burned-in captions, and `--join` to combine clips) | Pre-class preview, make-up lessons, YouTube / LMS upload |
 
 ---
@@ -193,7 +193,7 @@ Please clone https://github.com/MeiChen-ai/soil-motion-deck.git, copy `soil-moti
 
 ### 5. Step 2: Which Slides Should You Animate? (Golden Rules)
 
-In a 10–15 slide teaching deck, **do not animate every slide**—animating **2 to 4 key slides** creates the strongest learning impact:
+In a 10–15 slide teaching deck, **do not animate every slide**—animating **3 to 5 key slides** creates the strongest learning impact:
 
 * ✅ **Great Candidates for Animation (where *change over time* is the teaching point)**:
   1. **Myth-Busting & Error Correction Flips**: Show a common learner error ➔ stamp ❌ and highlight the problem word ➔ unfold ✅ the target revision and explanation.
@@ -210,7 +210,7 @@ In your Step 0 folder, in a new chat, **paste only this prompt** (replace `[...]
 
 #### 📋 Starter Prompt: Inspect Your Deck & Recommend Slides to Animate
 ```text
-Please use the `soil-motion-html` skill to inspect `[your-deck.html]` and evaluate each slide for animation. Give me a table categorizing slides into "Great Fit / Possible / Keep Static" with a one-sentence description of how each candidate animation would play out, so I can choose which 2–4 slides to animate!
+Please use the `soil-motion-html` skill to inspect `[your-deck.html]` and evaluate each slide for animation. Give me a table categorizing slides into "Great Fit / Possible / Keep Static" with a one-sentence description of how each candidate animation would play out, so I can choose which 3–5 slides to animate!
 ```
 
 The AI will then ask you questions one at a time. Here is how to answer:
